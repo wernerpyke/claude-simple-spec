@@ -42,9 +42,7 @@ When the scope is a diff:
 
 ## The rules
 
-Everything below is generated from the project's `RULES.md`. To update the rules, edit `RULES.md` and re-run `python build.py` in this skill directory.
-
-<!-- BEGIN RULES (generated from RULES.md — do not edit by hand) -->
+<!-- RULES:START -->
 
 - One idea per sentence. Replace `;`, and em-dash interruptions with full stops.
 - Use newline frequently to separate thoughts.
@@ -57,9 +55,11 @@ Everything below is generated from the project's `RULES.md`. To update the rules
 - Cut enumerations when a named set already identifies the members.
 - Cut trailing why/how clauses when the mechanism is obvious or documented elsewhere.
 
-<!-- END RULES -->
+<!-- RULES:END -->
 
 ## A worked example
+
+<!-- EXAMPLE:START -->
 
 Original AI prose:
 
@@ -76,3 +76,5 @@ Rewritten:
 > [^db-stateless]: no module-global path, no connection caching
 
 Note what happened: one idea per line, the em-dash interruption became a full stop, the parenthetical helper list and the stateless clarification moved to footnotes, and every fact survived.
+
+<!-- EXAMPLE:END -->
