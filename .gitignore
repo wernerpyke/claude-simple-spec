@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Obsidian vault config (local editor state)
+.obsidian/
+
+# Eval runs are scratch and live in tmp, but ignore any local copy too
+/doc-rewrite-workspace/
+/simple-spec-evals/

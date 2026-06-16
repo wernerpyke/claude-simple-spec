@@ -1,0 +1,41 @@
+{
+  "skill_name": "simple-spec",
+  "evals": [
+    {
+      "id": 0,
+      "name": "whole-doc-sqlite",
+      "mode": "document",
+      "prompt": "Apply the documentation grammar rules to example-1.md to make it more readable. Edit the file in place.",
+      "expected_output": "example-1.md rewritten in place: long sentences split one-idea-per-line, em-dash interruptions become full stops, the parenthetical DB helper list and the stateless clarification moved to section footnotes. Every fact preserved. Close in spirit to example-1-human.md.",
+      "ground_truth": "examples/example-1-human.md",
+      "files": ["examples/example-1.md"]
+    },
+    {
+      "id": 1,
+      "name": "whole-doc-http",
+      "mode": "document",
+      "prompt": "Run the grammar rules over example-2.md and clean it up in place.",
+      "expected_output": "example-2.md rewritten in place: sentences split, the three call-site lists and the pre-strict-envelope chain moved to footnotes, restated/announce filler cut, facts preserved. Close in spirit to example-2-human.md.",
+      "ground_truth": "examples/example-2-human.md",
+      "files": ["examples/example-2.md"]
+    },
+    {
+      "id": 2,
+      "name": "section-only-accounting",
+      "mode": "section",
+      "prompt": "In example-3.md, rewrite only the SP3 section (the one about /api/accounting/get and Declined quotes) using the grammar rules. Leave the SP1 and SP2 sections exactly as they are.",
+      "expected_output": "Only the SP3 section is rewritten in place. SP1 and SP2 are byte-for-byte unchanged. SP3 facts preserved, asides moved to footnotes within that section.",
+      "ground_truth": null,
+      "files": ["examples/example-3.md"]
+    },
+    {
+      "id": 3,
+      "name": "git-diff-added-prose",
+      "mode": "diff",
+      "prompt": "I just added a new section to docs/cache.md in this repo. Apply the documentation grammar rules to what I added, but don't touch the prose that was already there.",
+      "expected_output": "Only the added (uncommitted) section is rewritten in place. The pre-existing committed prose is left unchanged. Skill uses git diff to find the added lines.",
+      "ground_truth": null,
+      "files": ["diff-repo (constructed by setup)"]
+    }
+  ]
+}

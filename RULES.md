@@ -1,0 +1,10 @@
+- One idea per sentence. Replace `;`, and em-dash interruptions with full stops.
+- Use newline frequently to separate thoughts.
+- Prefer active voice. Rewrite passive constructions to lead with the actor.
+- Use named Markdown footnotes (`[^label]`) instead of parentheticals. Move inline lists of examples or clarifications to footnotes at the bottom of each section rather than end of document.
+- Cut fields or sentences that restate information already given.
+- Cut sentences that announce what follows rather than stating a fact.
+- Cut intensifiers / connectives that carry no fact: genuinely, additionally, narrowed, exactly like.
+- Cut glosses that re-explain a named symbol: (creates a data folder) , (opens a browser).
+- Cut enumerations when a named set already identifies the members.
+- Cut trailing why/how clauses when the mechanism is obvious or documented elsewhere.
