@@ -14,7 +14,7 @@ The reports skill's public function signatures didn't change.
 Only the internal HTTP/decode mechanics moved.
 
 The migration also fixed a latent bug.
-HTML-instead-of-JSON responses[^session-expiry] used to leak `ValueError` from `.json()` in the catalogues path.
+HTML-instead-of-JSON responses (session expiry) used to leak `ValueError` from `.json()` in the catalogues path.
 Post-migration they raise `SessionExpiredError` cleanly.
 
 `decode_response` is now internal to `_shared/api/` and consumed only by `get_json`.
@@ -23,4 +23,3 @@ It was originally a private helper in `reports.py`.
 [^http-calls]: `get_reports_list`, `run_report`, the metadata endpoints
 [^envelope]: `session.get` → `_decode_response` → `print_output + return None`
 [^call-styles]: `reports` print-and-return-None, `projects/fetch` raw `.json()`, `projects/api` typed-error
-[^session-expiry]: session expiry

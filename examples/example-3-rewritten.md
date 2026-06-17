@@ -107,7 +107,6 @@ The `DECLINED_STATUSES = {"Declined"}` set in `skills/projects/scripts/budget.py
 - A future *audit* command or quote-history view would want the unfiltered list[^sp3-audit].
   At that point the filter becomes a flag rather than a hard-coded exclusion.
 
-**First documented.** Phase 3 step 6[^sp3-commit]. Recorded here 2026-05-23.
+**First documented.** Phase 3 step 6 (commit `f42456a`). Recorded here 2026-05-23.
 
 [^sp3-audit]: to show the full negotiation history
-[^sp3-commit]: commit `f42456a`

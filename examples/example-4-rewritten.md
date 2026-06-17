@@ -63,11 +63,9 @@ Destroying the active session is a deliberate trade-off.
 
 **Implications.**
 A user who runs `login` mid-session will lose their current session before the new one is confirmed.
-If the new login fails[^sks3-failure], they are left unauthenticated.
+If the new login fails (e.g. browser timeout), they are left unauthenticated.
 
 **First documented.** 2026-06-15.
-
-[^sks3-failure]: e.g. browser timeout
 
 ---
 
@@ -96,7 +94,7 @@ Changing either coordinate breaks cross-skill session sharing and invalidates an
 **What.**
 Reading the session from the Keychain produces one of three outcomes, each mapping to a distinct error code:
 
-- **Jar**[^sks5-jar]. Session available. Proceed.
+- **Jar** (entry present and parseable). Session available. Proceed.
 - **Absent**. Surfaces as `NOT_AUTHENTICATED`. The user has never logged in or has logged out.
 - **Denied**[^sks5-denied]. Surfaces as `SESSION_EXPIRED`. The session exists but cannot be read.
 
@@ -114,7 +112,6 @@ The error code signals what action the user should take.
 
 **First documented.** 2026-06-15.
 
-[^sks5-jar]: entry present and parseable
 [^sks5-denied]: user cancelled Keychain access, or ACL denied
 [^sks5-denied-why]: possibly a permissions issue, or the user dismissed the prompt
 

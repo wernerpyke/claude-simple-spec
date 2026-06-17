@@ -44,16 +44,24 @@ When the scope is a diff:
 
 <!-- RULES:START -->
 
+Apply the below rules in three phases. Complete each phase before starting the next.
+
+### Phase 1
+- Cut intensifiers / connectives that carry no fact, for example: "genuinely", "additionally", "narrowed", "exactly like".
+- Cut glosses that re-explain a named symbol, for example: "(creates a data folder)", "(opens a browser)".
+- Cut sentences that announce what follows rather than stating a fact.
+- Cut fields or sentences that restate information already given.
+- Cut trailing why/how clauses when the mechanism is obvious or documented elsewhere.
+- Cut enumerations when a named set already identifies the members.
+
+### Phase 2
 - One idea per sentence. Replace `;`, and em-dash interruptions with full stops.
 - Use newline frequently to separate thoughts.
 - Prefer active voice. Rewrite passive constructions to lead with the actor.
-- Use named Markdown footnotes (`[^label]`) instead of parentheticals. Move inline lists of examples or clarifications to footnotes at the bottom of each section rather than end of document.
-- Cut fields or sentences that restate information already given.
-- Cut sentences that announce what follows rather than stating a fact.
-- Cut intensifiers / connectives that carry no fact: genuinely, additionally, narrowed, exactly like.
-- Cut glosses that re-explain a named symbol: (creates a data folder) , (opens a browser).
-- Cut enumerations when a named set already identifies the members.
-- Cut trailing why/how clauses when the mechanism is obvious or documented elsewhere.
+
+### Phase 3
+- Move inline asides that are a list of examples or a clarification of more than four words to named Markdown footnotes (`[^label]`), whether they sit in parentheses, after a dash, or after a colon. Leave asides of four words or less inline. Footnotes are placed at the bottom of each section rather than end of document.
+- Do one last sweep for restatement or duplication that splitting sentences in Phase 2 may have exposed, and cut it.
 
 <!-- RULES:END -->
 
@@ -63,18 +71,32 @@ When the scope is a diff:
 
 Original AI prose:
 
+> **All SQLite access goes through the single seam at `skills/_shared/db/`** (`connect_db`, `connect_db_ro`, `ensure_tables`, ...). It's worth noting that no skill calls `sqlite3.connect()` directly — the only `sqlite3.connect()` calls live inside `_shared/db/db.py`. The seam is genuinely **stateless**: callers pass an explicit `db_path` (no module-global path, no connection caching).
+
+Apply the phases in order.
+
+**Phase 1 — cut.** Drop "It's worth noting that" (announces what follows) and "genuinely" (intensifier carrying no fact):
+
 > **All SQLite access goes through the single seam at `skills/_shared/db/`** (`connect_db`, `connect_db_ro`, `ensure_tables`, ...). No skill calls `sqlite3.connect()` directly — the only `sqlite3.connect()` calls live inside `_shared/db/db.py`. The seam is **stateless**: callers pass an explicit `db_path` (no module-global path, no connection caching).
 
-Rewritten:
+**Phase 2 — structure.** One idea per sentence, lead with the actor, and turn the em-dash and the colon into full stops:
+
+> **All SQLite access goes through the single seam at `skills/_shared/db/`** (`connect_db`, `connect_db_ro`, `ensure_tables`, ...).
+> No skill calls `sqlite3.connect()` directly.
+> The only `sqlite3.connect()` calls live inside `_shared/db/db.py`.
+> The seam is **stateless**.
+> Callers pass an explicit `db_path` (no module-global path, no connection caching).
+
+**Phase 3 — footnotes.** Move the two long asides to footnotes at the bottom of the section. The helper list sits in parentheses; "no module-global path, no connection caching" is a clarification of more than four words. Both move. A four-word-or-less aside would stay inline:
 
 > **All SQLite access is via `skills/_shared/db/`[^db-helpers].**
 > No skill calls `sqlite3.connect()` directly.
 > The only `sqlite3.connect()` calls live inside `_shared/db/db.py`.
-> SQLite access is **stateless**. Callers pass an explicit `db_path`[^db-stateless].
+> The seam is **stateless**. Callers pass an explicit `db_path`[^db-stateless].
 >
 > [^db-helpers]: `connect_db`, `connect_db_ro`, `ensure_tables`, ...
 > [^db-stateless]: no module-global path, no connection caching
 
-Note what happened: one idea per line, the em-dash interruption became a full stop, the parenthetical helper list and the stateless clarification moved to footnotes, and every fact survived.
+Note what happened: the announce clause and the intensifier are gone, one idea sits per line, the em-dash and colon became full stops, the helper list and the stateless clarification moved to footnotes, and every fact survived.
 
 <!-- EXAMPLE:END -->
