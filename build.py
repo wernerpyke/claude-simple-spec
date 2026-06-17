@@ -19,7 +19,7 @@ import sys
 REPO = pathlib.Path(__file__).resolve().parent   # build.py lives at repo root
 DEFAULT_SKELETON = REPO / "readability/SKILL.md"
 DEFAULT_RULES = REPO / "readability/RULES.md"
-DEFAULT_EXAMPLE = REPO / "readability/WORKED-EXAMPLE.md"
+DEFAULT_EXAMPLE = REPO / "readability/EXAMPLE.md"
 DEFAULT_OUT = REPO / "dist/spec-readability/SKILL.md"
 
 # Each embedded block is delimited by a START/END marker pair in the skeleton.
