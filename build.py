@@ -19,7 +19,7 @@ import sys
 REPO = pathlib.Path(__file__).resolve().parent   # build.py lives at repo root
 DEFAULT_RULES = REPO / "RULES.md"
 DEFAULT_EXAMPLE = REPO / "WORKED-EXAMPLE.md"
-DEFAULT_SKILL = REPO / ".claude/skills/simple-spec/SKILL.md"
+DEFAULT_SKILL = REPO / "skills/readable-spec/SKILL.md"
 
 # Each embedded block is delimited by a START/END marker pair in SKILL.md.
 RULES_MARKERS = ("<!-- RULES:START -->", "<!-- RULES:END -->")

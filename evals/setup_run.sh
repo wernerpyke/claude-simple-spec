@@ -6,13 +6,13 @@
 # The eval workspace is scratch — input copies, per-run outputs, grading, and
 # benchmark files. It does NOT belong in the repo. It defaults to a tmp
 # location and should be deleted once the eval is reviewed:
-#     rm -rf /tmp/simple-spec-evals
+#     rm -rf /tmp/readable-spec-evals
 #
 # Creates <iteration-dir>/<eval-name>/{with_skill,without_skill}/outputs/ populated
 # with each eval's input files (in-place editing targets).
 set -euo pipefail
 
-ITER="${1:-/tmp/simple-spec-evals/iteration-1}"
+ITER="${1:-/tmp/readable-spec-evals/iteration-1}"
 EVALS_DIR="$(cd "$(dirname "$0")" && pwd)"        # evals/ at repo root
 REPO_ROOT="$(cd "$EVALS_DIR/.." && pwd)"
 EXAMPLES="$REPO_ROOT/examples"

@@ -1,9 +1,9 @@
 ---
-name: simple-spec
-description: Rewrite AI-generated technical prose for readability using this project's documentation grammar rules. Use whenever the user wants to clean up, tighten, simplify, or improve the readability of documentation, ADRs, READMEs, developer guides, or design docs — or asks to "apply the rules" / "run the grammar rules" / run "/simple-spec" on a file, a section, or a git diff. Trigger even when the user doesn't name the rules explicitly but clearly wants AI-sounding docs made easier to read.
+name: readable-spec
+description: Rewrite AI-generated technical prose for readability using this project's documentation grammar rules. Use whenever the user wants to clean up, tighten, simplify, or improve the readability of documentation, ADRs, READMEs, developer guides, or design docs — or asks to "apply the rules" / "run the grammar rules" / run "/readable-spec" on a file, a section, or a git diff. Trigger even when the user doesn't name the rules explicitly but clearly wants AI-sounding docs made easier to read.
 ---
 
-# Simple Spec
+# Readable Spec
 
 Rewrite AI-generated technical documentation so a human can read it quickly, by applying the grammar rules embedded below. The rules are the contract — apply them, don't paraphrase them.
 
