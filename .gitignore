@@ -11,6 +11,12 @@ __pycache__/
 # Claude Code local config (not shipped)
 .claude/
 
+# Build output
+/dist/
+
+# Eval outputs
+examples/*-rewritten.md
+
 # Eval runs are scratch and live in tmp, but ignore any local copy too
 /doc-rewrite-workspace/
 /simple-spec-evals/
